@@ -28,3 +28,11 @@ td {
 .delete-btn {
   cursor: pointer;
 }
+
+#change-btn {
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}

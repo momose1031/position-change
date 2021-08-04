@@ -40,44 +40,51 @@ btn.addEventListener('click', () => {
 });
 
 const playerLists = document.getElementById('player-lists');
+const changeBtn = document.getElementById('change-btn');
 
 function add () {
   if (player.value) { //プレイヤーが登録された場合
     players.push(player.value);
+    console.log(players);
     const li = document.createElement('li');
     li.textContent = player.value;
-    const deleteBtn = document.createElement('div');
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.textContent = '削除';
-    li.appendChild(deleteBtn);
+    // const deleteBtn = document.createElement('div');
+    // deleteBtn.classList.add('delete-btn');
+    // deleteBtn.textContent = '削除';
+    // li.appendChild(deleteBtn);
     playerLists.appendChild(li);
     player.value = ''; //inputの中身を空にする
-    deleteBtn.addEventListener('click', () => {
-      li.remove();
-      // players.splice(removeNum, 1);
-      console.log(players);
-    });
-    if (players.length > 9) {
-      const mem1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      fw2.textContent = mem1;
-      const mem2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      fw4.textContent = mem2;
-      const mem3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      mf3.textContent = mem3;
-      const mem4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      mf7.textContent = mem4;
-      const mem5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      mf9.textContent = mem5;
-      const mem6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      mf13.textContent = mem6;
-      const mem7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      df1.textContent = mem7;
-      const mem8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      df2.textContent = mem8;
-      const mem9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      df4.textContent = mem9;
-      const mem10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-      df5.textContent = mem10;
-    }
+    // deleteBtn.addEventListener('click', () => {
+      //   li.remove();
+      //   // players.splice();
+      // });
+      if (players.length > 9) {
+        player.classList.add('hidden');
+        btn.classList.add('hidden');
+        changeBtn.classList.remove('hidden');
+        changeBtn.addEventListener('click', () => {
+          const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw2.textContent = player1;
+          const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = player2;
+          const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf3.textContent = player3;
+          const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = player4;
+          const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = player5;
+          const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf13.textContent = player6;
+          const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = player7;
+          const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = player8;
+          const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = player9;
+          const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = player10;
+          changeBtn.classList.add('hidden');
+        });
+      }
   }
 }
