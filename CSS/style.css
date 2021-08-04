@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.coat {
+  background-image: url("../img/1407951.jpg");
+  background-repeat: no-repeat;
+  background-size: 500px;
+  width: 500px;
+  height: 700px;
+}
+
+table {
+  padding: 40px;
+  height: 600px;
+  color: #fff;
+}
+
+td {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+}
+
+.delete-btn {
+  cursor: pointer;
+}
