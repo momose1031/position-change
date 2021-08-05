@@ -38,6 +38,7 @@ btn.addEventListener('click', () => {
 
 const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
+const editBtn = document.getElementById('edit-btn');
 
 function add () {
   if (player.value) { //プレイヤーが登録された場合
@@ -45,7 +46,7 @@ function add () {
     const li = document.createElement('li');
     li.textContent = player.value;
     const deleteBtn = document.createElement('div');
-    deleteBtn.classList.add('delete-btn');
+    deleteBtn.classList.add('delete-btn', 'hidden');
     deleteBtn.textContent = '削除';
     playerLists.appendChild(li);
     playerLists.appendChild(deleteBtn);
@@ -63,6 +64,18 @@ function add () {
         player.classList.add('hidden');
         btn.classList.add('hidden');
         changeBtn.classList.remove('hidden');
+        editBtn.classList.remove('hidden');
+
+        editBtn.addEventListener('click', () => {
+          player.classList.remove('hidden');
+          btn.classList.remove('hidden');
+          const allDeleteBtn = document.getElementsByClassName('delete-btn');
+          console.log(allDeleteBtn);
+          [].forEach.call(allDeleteBtn, (deleteBtn) => {
+            deleteBtn.classList.remove('hidden');
+          });
+        });
+
         changeBtn.addEventListener('click', () => {
           const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
           fw2.textContent = player1;
