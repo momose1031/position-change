@@ -96,3 +96,144 @@ changeBtn.addEventListener('click', () => {
   df5.textContent = player10;
   changeBtn.classList.add('hidden');
 });
+
+let formation = document.getElementById('formation');
+let tds = document.querySelectorAll('td');
+let gk = document.getElementById('gk');
+
+formation.addEventListener('change', (e) => {
+  if (e.target.value === 'position1') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw2.textContent = 'FW';
+    fw4.textContent = 'FW';
+    mf3.textContent = 'MF';
+    mf7.textContent = 'MF';
+    mf9.textContent = 'MF';
+    mf13.textContent = 'MF';
+    df1.textContent = 'DF';
+    df2.textContent = 'DF';
+    df4.textContent = 'DF';
+    df5.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position2') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw2.textContent = 'FW';
+    fw3.textContent = 'FW';
+    fw4.textContent = 'FW';
+    mf7.textContent = 'MF';
+    mf8.textContent = 'MF';
+    mf9.textContent = 'MF';
+    df1.textContent = 'DF';
+    df2.textContent = 'DF';
+    df4.textContent = 'DF';
+    df5.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position3') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw3.textContent = 'FW';
+    mf3.textContent = 'MF';
+    mf6.textContent = 'MF';
+    mf10.textContent = 'MF';
+    mf12.textContent = 'MF';
+    mf14.textContent = 'MF';
+    df1.textContent = 'DF';
+    df2.textContent = 'DF';
+    df4.textContent = 'DF';
+    df5.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position4') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw2.textContent = 'FW';
+    fw4.textContent = 'FW';
+    mf3.textContent = 'MF';
+    mf6.textContent = 'MF';
+    mf10.textContent = 'MF';
+    mf12.textContent = 'MF';
+    mf14.textContent = 'MF';
+    df2.textContent = 'DF';
+    df3.textContent = 'DF';
+    df4.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position5') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw2.textContent = 'FW';
+    fw3.textContent = 'FW';
+    fw4.textContent = 'FW';
+    mf6.textContent = 'MF';
+    mf7.textContent = 'MF';
+    mf9.textContent = 'MF';
+    mf10.textContent = 'MF';
+    df2.textContent = 'DF';
+    df3.textContent = 'DF';
+    df4.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position6') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw3.textContent = 'FW';
+    mf2.textContent = 'MF';
+    mf4.textContent = 'MF';
+    mf6.textContent = 'MF';
+    mf10.textContent = 'MF';
+    mf12.textContent = 'MF';
+    mf14.textContent = 'MF';
+    df2.textContent = 'DF';
+    df3.textContent = 'DF';
+    df4.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position7') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw3.textContent = 'FW';
+    mf3.textContent = 'MF';
+    mf7.textContent = 'MF';
+    mf9.textContent = 'MF';
+    mf13.textContent = 'MF';
+    df1.textContent = 'DF';
+    df2.textContent = 'DF';
+    df3.textContent = 'DF';
+    df4.textContent = 'DF';
+    df5.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position8') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    fw2.textContent = 'FW';
+    fw4.textContent = 'FW';
+    mf7.textContent = 'MF';
+    mf8.textContent = 'MF';
+    mf9.textContent = 'MF';
+    df1.textContent = 'DF';
+    df2.textContent = 'DF';
+    df3.textContent = 'DF';
+    df4.textContent = 'DF';
+    df5.textContent = 'DF';
+    gk.classList.remove('hidden');
+  }
+  else if (e.target.value === 'position0') {
+    [].forEach.call(tds, (td) => {
+      td.textContent = '';
+    });
+    gk.classList.add('hidden');
+  }
+});
