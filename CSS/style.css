@@ -25,6 +25,11 @@ td {
   line-height: 80px;
 }
 
+.gk {
+  text-align: center;
+  color: #fff;
+}
+
 .delete-btn {
   cursor: pointer;
 }

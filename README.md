@@ -25,8 +25,8 @@
 
 - 言語：HTML,CSS,JavaScript
 - フレームワーク：Vue.js
-- JS ライブラリ：
+<!-- - JS ライブラリ： -->
 - IDE：Visual Studio Code
 
 ## 使用素材
-- 画像素材：[写真AC](https://www.photo-ac.com/)
+- イラスト素材：[イラストAC](https://www.ac-illust.com/)

@@ -1,5 +1,3 @@
-'use strict';
-
 const fw1 = document.getElementById('fw1');
 const fw2 = document.getElementById('fw2');
 const fw3 = document.getElementById('fw3');
@@ -36,7 +34,6 @@ let players = [];
 btn.addEventListener('click', () => {
   let player = document.getElementById('player');
   add();
-  // console.log(players);
 });
 
 const playerLists = document.getElementById('player-lists');
@@ -45,19 +42,23 @@ const changeBtn = document.getElementById('change-btn');
 function add () {
   if (player.value) { //プレイヤーが登録された場合
     players.push(player.value);
-    console.log(players);
     const li = document.createElement('li');
     li.textContent = player.value;
-    // const deleteBtn = document.createElement('div');
-    // deleteBtn.classList.add('delete-btn');
-    // deleteBtn.textContent = '削除';
-    // li.appendChild(deleteBtn);
+    const deleteBtn = document.createElement('div');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = '削除';
     playerLists.appendChild(li);
+    playerLists.appendChild(deleteBtn);
     player.value = ''; //inputの中身を空にする
-    // deleteBtn.addEventListener('click', () => {
-      //   li.remove();
-      //   // players.splice();
-      // });
+    deleteBtn.addEventListener('click', () => {
+        li.remove();
+        deleteBtn.remove();
+        let index = players.indexOf(li.textContent);
+        if (index > -1) {
+          players.splice(index, 1);
+          console.log(players);
+        }
+      });
       if (players.length > 9) {
         player.classList.add('hidden');
         btn.classList.add('hidden');
