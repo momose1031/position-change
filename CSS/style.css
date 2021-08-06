@@ -1,6 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
   display: flex;
 }
 
@@ -40,4 +45,38 @@ td {
 
 .hidden {
   visibility: hidden;
+}
+
+#top-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  z-index: 1;
+}
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.4s;
+  z-index: 2;
 }

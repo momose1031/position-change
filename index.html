@@ -6,67 +6,80 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="coat">
-    <table>
-      <tbody>
-        <tr>
-          <td id="fw1"></td>
-          <td id="fw2"></td>
-          <td id="fw3"></td>
-          <td id="fw4"></td>
-          <td id="fw5"></td>
-        </tr>
-        <tr>
-          <td id="mf1"></td>
-          <td id="mf2"></td>
-          <td id="mf3"></td>
-          <td id="mf4"></td>
-          <td id="mf5"></td>
-        </tr>
-        <tr>
-          <td id="mf6"></td>
-          <td id="mf7"></td>
-          <td id="mf8"></td>
-          <td id="mf9"></td>
-          <td id="mf10"></td>
-        </tr>
-        <tr>
-          <td id="mf11"></td>
-          <td id="mf12"></td>
-          <td id="mf13"></td>
-          <td id="mf14"></td>
-          <td id="mf15"></td>
-        </tr>
-        <tr>
-          <td id="df1"></td>
-          <td id="df2"></td>
-          <td id="df3"></td>
-          <td id="df4"></td>
-          <td id="df5"></td>
-        </tr>
-      </tbody>
-    </table>
-    <div id="gk" class="hidden">GK</div>
+  <div class="main">
+    <div class="coat">
+      <table>
+        <tbody>
+          <tr>
+            <td id="fw1"></td>
+            <td id="fw2"></td>
+            <td id="fw3"></td>
+            <td id="fw4"></td>
+            <td id="fw5"></td>
+          </tr>
+          <tr>
+            <td id="mf1"></td>
+            <td id="mf2"></td>
+            <td id="mf3"></td>
+            <td id="mf4"></td>
+            <td id="mf5"></td>
+          </tr>
+          <tr>
+            <td id="mf6"></td>
+            <td id="mf7"></td>
+            <td id="mf8"></td>
+            <td id="mf9"></td>
+            <td id="mf10"></td>
+          </tr>
+          <tr>
+            <td id="mf11"></td>
+            <td id="mf12"></td>
+            <td id="mf13"></td>
+            <td id="mf14"></td>
+            <td id="mf15"></td>
+          </tr>
+          <tr>
+            <td id="df1"></td>
+            <td id="df2"></td>
+            <td id="df3"></td>
+            <td id="df4"></td>
+            <td id="df5"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="gk" class="hidden">GK</div>
+    </div>
+
+    <div>
+      <select name="formation" id="formation">
+        <option value="position0">フォーメーションを選択</option>
+        <option value="position1">4-4-2</option>
+        <option value="position2">4-3-3</option>
+        <option value="position3">4-5-1</option>
+        <option value="position4">3-5-2</option>
+        <option value="position5">3-4-3</option>
+        <option value="position6">3-6-1</option>
+        <option value="position7">5-4-1</option>
+        <option value="position8">5-3-2</option>
+      </select>
+      <button id="select-btn">フォーメーションを決定</button><br>
+      <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
+      <button id="btn" class="hidden">登録</button>
+      <ol id="player-lists"></ol>
+      <div id="change-btn" class="hidden">ポジションを変える</div>
+    </div>
+  </div>
+  <div id="top-page">
+    <p>ポジションチェンジ（サッカー編）</p>
+    <div id="start-btn">はじめる</div>
   </div>
 
-  <div>
-    <select name="formation" id="formation">
-      <option value="position0">フォーメーションを選択</option>
-      <option value="position1">4-4-2</option>
-      <option value="position2">4-3-3</option>
-      <option value="position3">4-5-1</option>
-      <option value="position4">3-5-2</option>
-      <option value="position5">3-4-3</option>
-      <option value="position6">3-6-1</option>
-      <option value="position7">5-4-1</option>
-      <option value="position8">5-3-2</option>
-    </select>
-    <button id="select-btn">フォーメーションを決定</button><br>
-    <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
-    <button id="btn" class="hidden">登録</button>
-    <ol id="player-lists"></ol>
-    <div id="change-btn" class="hidden">ポジションを変える</div>
-  </div>
+  <div id="mask" class="hidden"></div>
+
+  <section id="modal" class="hidden">
+    <p id="modal-p">まずは、フォーメーションを決めよう！！</p>
+    <div id="close">閉じる</div>
+  </section>
 
     <script src="js/main.js"></script>
 </body>

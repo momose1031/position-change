@@ -85,6 +85,7 @@ formation.addEventListener('change', (e) => {
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -138,6 +139,7 @@ formation.addEventListener('change', (e) => {
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -191,6 +193,7 @@ formation.addEventListener('change', (e) => {
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -244,6 +247,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -297,6 +301,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -350,6 +355,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -403,6 +409,7 @@ formation.addEventListener('change', (e) => {
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -456,6 +463,7 @@ formation.addEventListener('change', (e) => {
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -502,3 +510,31 @@ formation.addEventListener('change', (e) => {
 });
 
 const selectBtn = document.getElementById('select-btn');
+
+const topPage = document.getElementById('top-page');
+const startBtn = document.getElementById('start-btn');
+const modal = document.getElementById('modal');
+const modalP = document.getElementById('modal-p');
+const mask = document.getElementById('mask');
+const close = document.getElementById('close');
+
+startBtn.addEventListener('click', () => {
+  topPage.classList.add('hidden');
+  modal.classList.remove('hidden');
+  mask.classList.remove('hidden');
+});
+
+close.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  mask.classList.add('hidden');
+});
+
+mask.addEventListener('click', () => {
+  close.click();
+});
+
+function modal2 () {
+  modal.classList.remove('hidden');
+  mask.classList.remove('hidden');
+  modalP.textContent = 'フィールドプレーヤーを10人登録して、決定を押すと、今日のポジションが決まるよ！！';
+}
