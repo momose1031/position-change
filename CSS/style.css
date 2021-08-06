@@ -4,17 +4,16 @@ body {
 }
 
 .main {
-  margin: 0;
-  padding: 0;
   display: flex;
 }
 
 .coat {
-  background-image: url("../img/1407951.jpg");
+  background-image: url("../img/coat.jpg");
   background-repeat: no-repeat;
   background-size: 500px;
   width: 500px;
   height: 700px;
+  margin: 20px auto;
 }
 
 table {
@@ -35,11 +34,15 @@ td {
   color: #fff;
 }
 
+.right {
+
+}
+
 .delete-btn {
   cursor: pointer;
 }
 
-#change-btn, #select-btn {
+#change-btn, #select-btn, #start-btn, #close {
   cursor: pointer;
 }
 
@@ -53,8 +56,28 @@ td {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: aquamarine;
+  background-color: #fff;
+  background-image: url(../img/top_image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 1;
+}
+
+#top-page > p {
+  font-size: 100px;
+  text-align: center;
+  color:orange;
+}
+
+#start-btn {
+  background-color: rgba(24, 209, 18, 0.932);
+  margin: 0 auto;
+  width: 20%;
+  height: 50px;
+  color: #;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 50px;
 }
 
 #mask {
@@ -69,11 +92,12 @@ td {
 
 #modal {
   background-color: #fff;
-  width: 300px;
+  width: 30%;
   padding: 20px;
   border-radius: 4px;
+  text-align: center;
   position: absolute;
-  top: 40px;
+  top: 150px;
   left: 0;
   right: 0;
   margin: 0 auto;
