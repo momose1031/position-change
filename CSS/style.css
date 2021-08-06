@@ -34,7 +34,7 @@ td {
   cursor: pointer;
 }
 
-#change-btn {
+#change-btn, #select-btn {
   cursor: pointer;
 }
 

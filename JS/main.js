@@ -28,11 +28,6 @@ const df5 = document.getElementById('df5');
 
 const btn = document.getElementById('btn');
 
-btn.addEventListener('click', () => {
-  let player = document.getElementById('player');
-  playerInput();
-});
-
 const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
 let players = [];
@@ -69,34 +64,6 @@ function playerInput () {
   }
 }
 
-changeBtn.addEventListener('click', () => {
-  const allDeleteBtn = document.getElementsByClassName('delete-btn');
-  [].forEach.call(allDeleteBtn, (deleteBtn) => {
-    deleteBtn.classList.add('hidden');
-  });
-  const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  fw2.textContent = player1;
-  const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  fw4.textContent = player2;
-  const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  mf3.textContent = player3;
-  const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  mf7.textContent = player4;
-  const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  mf9.textContent = player5;
-  const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  mf13.textContent = player6;
-  const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  df1.textContent = player7;
-  const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  df2.textContent = player8;
-  const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  df4.textContent = player9;
-  const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-  df5.textContent = player10;
-  changeBtn.classList.add('hidden');
-});
-
 let formation = document.getElementById('formation');
 let tds = document.querySelectorAll('td');
 let gk = document.getElementById('gk');
@@ -117,6 +84,43 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw2.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw4.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf3.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf7.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf9.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf13.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df1.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df5.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position2') {
     [].forEach.call(tds, (td) => {
@@ -133,6 +137,43 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw2.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw3.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw4.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf7.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf8.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf9.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df1.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df5.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position3') {
     [].forEach.call(tds, (td) => {
@@ -149,6 +190,43 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw3.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf3.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf6.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf10.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf12.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf14.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df1.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df5.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position4') {
     [].forEach.call(tds, (td) => {
@@ -165,6 +243,43 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'DF';
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw2.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw4.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf3.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf6.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf10.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf12.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf14.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df3.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position5') {
     [].forEach.call(tds, (td) => {
@@ -181,6 +296,43 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'DF';
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw2.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw3.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw4.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf6.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf7.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf9.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf10.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df3.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position6') {
     [].forEach.call(tds, (td) => {
@@ -197,6 +349,43 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'DF';
     df4.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw3.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf2.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf4.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf6.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf10.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf12.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf14.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df3.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position7') {
     [].forEach.call(tds, (td) => {
@@ -213,6 +402,43 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw3.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf3.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf7.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf9.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf13.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df1.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df3.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df5.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position8') {
     [].forEach.call(tds, (td) => {
@@ -229,6 +455,43 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'DF';
     df5.textContent = 'DF';
     gk.classList.remove('hidden');
+    selectBtn.addEventListener('click', () => {
+      formation.classList.add('hidden');
+      selectBtn.classList.add('hidden');
+      player.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        let player = document.getElementById('player');
+        playerInput();
+      });
+      changeBtn.addEventListener('click', () => {
+        const allDeleteBtn = document.getElementsByClassName('delete-btn');
+        [].forEach.call(allDeleteBtn, (deleteBtn) => {
+          deleteBtn.classList.add('hidden');
+        });
+        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw2.textContent = player1;
+        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        fw4.textContent = player2;
+        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf7.textContent = player3;
+        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf8.textContent = player4;
+        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        mf9.textContent = player5;
+        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df1.textContent = player6;
+        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df2.textContent = player7;
+        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df3.textContent = player8;
+        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df4.textContent = player9;
+        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        df5.textContent = player10;
+        changeBtn.classList.add('hidden');
+      });
+    });
   }
   else if (e.target.value === 'position0') {
     [].forEach.call(tds, (td) => {
@@ -239,7 +502,3 @@ formation.addEventListener('change', (e) => {
 });
 
 const selectBtn = document.getElementById('select-btn');
-
-selectBtn.addEventListener('click', () => {
-  formation.classList.add('hidden');
-});
