@@ -95,6 +95,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position1') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -149,6 +152,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position2') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -203,6 +209,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position3') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -257,6 +266,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position4') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -311,6 +323,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position5') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -365,6 +380,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position6') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -419,6 +437,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position7') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
@@ -473,6 +494,9 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
+        if (e.target.value !== 'position8') {
+          return;
+        }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
