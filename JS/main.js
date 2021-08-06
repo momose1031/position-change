@@ -49,18 +49,18 @@ function playerInput () {
     playerLists.appendChild(deleteBtn);
     player.value = ''; //inputの中身を空にする
     deleteBtn.addEventListener('click', () => {
-        li.remove();
-        deleteBtn.remove();
-        let index = players.indexOf(li.textContent);
-        if (index > -1) {
-          players.splice(index, 1);
-        }
-        if(players.length < 10) {
-          player.classList.remove('hidden');
-          btn.classList.remove('hidden');
-          changeBtn.classList.add('hidden');
-        }
-      });
+      li.remove();
+      deleteBtn.remove();
+      let index = players.indexOf(li.textContent);
+      if (index > -1) {
+        players.splice(index, 1);
+      }
+      if(players.length < 10) {
+        player.classList.remove('hidden');
+        btn.classList.remove('hidden');
+        changeBtn.classList.add('hidden');
+      }
+    });
     if (players.length > 9) {
       player.classList.add('hidden');
       btn.classList.add('hidden');
@@ -236,4 +236,10 @@ formation.addEventListener('change', (e) => {
     });
     gk.classList.add('hidden');
   }
+});
+
+const selectBtn = document.getElementById('select-btn');
+
+selectBtn.addEventListener('click', () => {
+  formation.classList.add('hidden');
 });
