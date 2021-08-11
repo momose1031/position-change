@@ -5,6 +5,7 @@ body {
 
 .main {
   display: flex;
+  text-align: left;
 }
 
 .coat {
@@ -13,7 +14,6 @@ body {
   background-size: 500px;
   width: 500px;
   height: 700px;
-  margin: 20px auto;
 }
 
 table {
@@ -35,14 +35,19 @@ td {
 }
 
 .right {
+  padding-top: 50px;
+}
 
+#formation {
+  font-size: 30px;
+  border-radius: 20px;
 }
 
 .delete-btn {
   cursor: pointer;
 }
 
-#change-btn, #select-btn, #start-btn, #close {
+#change-btn, #select-btn, #start-btn, #retry-btn, #close {
   cursor: pointer;
 }
 
@@ -103,4 +108,14 @@ td {
   margin: 0 auto;
   transition: transform 0.4s;
   z-index: 2;
+}
+
+#close {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
 }

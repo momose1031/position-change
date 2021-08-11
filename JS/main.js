@@ -67,6 +67,7 @@ function playerInput () {
 let formation = document.getElementById('formation');
 let tds = document.querySelectorAll('td');
 let gk = document.getElementById('gk');
+const retryBtn = document.getElementById('retry-btn');
 
 formation.addEventListener('change', (e) => {
   if (e.target.value === 'position1') {
@@ -123,6 +124,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf13.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -560,5 +575,5 @@ mask.addEventListener('click', () => {
 function modal2 () {
   modal.classList.remove('hidden');
   mask.classList.remove('hidden');
-  modalP.textContent = 'フィールドプレーヤーを10人登録して、決定を押すと、今日のポジションが決まるよ！！';
+  modalP.textContent = 'フィールドプレーヤーを10人登録して、ポジションシャッフルしよう！！';
 }
