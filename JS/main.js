@@ -195,6 +195,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf8.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -252,6 +266,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -309,6 +337,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -366,6 +408,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -423,6 +479,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -480,6 +550,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf13.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
@@ -537,6 +621,20 @@ formation.addEventListener('change', (e) => {
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
+        retryBtn.classList.remove('hidden');
+        retryBtn.addEventListener('click', () => {
+          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
+          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf8.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        });
       });
     });
   }
