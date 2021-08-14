@@ -25,8 +25,6 @@
 
 - 言語：HTML,CSS,JavaScript
 - IDE：Visual Studio Code
-<!-- - フレームワーク：Vue.js -->
-<!-- - JS ライブラリ： -->
 
 ## 使用素材
 - イラスト素材：[イラストAC](https://www.ac-illust.com/)
