@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #ccc;
 }
 
 .main {
@@ -14,6 +15,7 @@ body {
   background-size: 500px;
   width: 500px;
   height: 700px;
+  margin: 0 auto;
 }
 
 table {
@@ -35,7 +37,8 @@ td {
 }
 
 .right {
-  padding-top: 50px;
+  padding-top: 30px;
+  margin: 0 auto;
 }
 
 #formation {

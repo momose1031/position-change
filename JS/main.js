@@ -70,21 +70,32 @@ let gk = document.getElementById('gk');
 const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
 
+const modalP1 = document.createElement('p');
+const modalP2 = document.createElement('p');
+const modalP3 = document.createElement('p');
+const modalP4 = document.createElement('p');
+const modalP5 = document.createElement('p');
+const modalP6 = document.createElement('p');
+const modalP7 = document.createElement('p');
+const modalP8 = document.createElement('p');
+const modalP9 = document.createElement('p');
+const modalP10 = document.createElement('p');
+
 formation.addEventListener('change', (e) => {
   if (e.target.value === 'position1') {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'FW';
-    fw4.textContent = 'FW';
-    mf3.textContent = 'MF';
-    mf7.textContent = 'MF';
-    mf9.textContent = 'MF';
-    mf13.textContent = 'MF';
-    df1.textContent = 'DF';
-    df2.textContent = 'DF';
-    df4.textContent = 'DF';
-    df5.textContent = 'DF';
+    fw2.textContent = 'CF';
+    fw4.textContent = 'CF';
+    mf3.textContent = 'OMF';
+    mf7.textContent = 'LSH';
+    mf9.textContent = 'RSH';
+    mf13.textContent = 'DMF';
+    df1.textContent = 'LSB';
+    df2.textContent = 'CB';
+    df4.textContent = 'CB';
+    df5.textContent = 'RSB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -130,46 +141,27 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = 'FW：' + fw2.textContent;
-          const modalP2 = document.createElement('p');
-          modalP2.textContent = 'FW：' + fw4.textContent;
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw2.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'CF：' + fw4.textContent;
           close.before(modalP2);
-          const modalP3 = document.createElement('p');
-          modalP3.textContent = 'MF：' + mf3.textContent;
+          modalP3.textContent = '0MF：' + mf3.textContent;
           close.before(modalP3);
-          const modalP4 = document.createElement('p');
-          modalP4.textContent = 'MF：' + mf7.textContent;
+          modalP4.textContent = 'LSH：' + mf7.textContent;
           close.before(modalP4);
-          const modalP5 = document.createElement('p');
-          modalP5.textContent = 'MF：' + mf9.textContent;
+          modalP5.textContent = 'RSH：' + mf9.textContent;
           close.before(modalP5);
-          const modalP6 = document.createElement('p');
-          modalP6.textContent = 'MF：' + mf13.textContent;
+          modalP6.textContent = 'DMF：' + mf13.textContent;
           close.before(modalP6);
-          const modalP7 = document.createElement('p');
-          modalP7.textContent = 'DF：' + df1.textContent;
+          modalP7.textContent = 'LSB：' + df1.textContent;
           close.before(modalP7);
-          const modalP8 = document.createElement('p');
-          modalP8.textContent = 'DF：' + df2.textContent;
+          modalP8.textContent = 'CB：' + df2.textContent;
           close.before(modalP8);
-          const modalP9 = document.createElement('p');
-          modalP9.textContent = 'DF：' + df4.textContent;
+          modalP9.textContent = 'CB：' + df4.textContent;
           close.before(modalP9);
-          const modalP10 = document.createElement('p');
-          modalP10.textContent = 'DF：' + df5.textContent;
+          modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
-          close.addEventListener('click', () => {
-            modalP.textContent = '';
-            modalP2.textContent = '';
-            modalP3.textContent = '';
-            modalP4.textContent = '';
-            modalP5.textContent = '';
-            modalP6.textContent = '';
-            modalP7.textContent = '';
-            modalP8.textContent = '';
-            modalP9.textContent = '';
-            modalP10.textContent = '';
-          });
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -191,16 +183,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'FW';
-    fw3.textContent = 'FW';
-    fw4.textContent = 'FW';
-    mf7.textContent = 'MF';
-    mf8.textContent = 'MF';
-    mf9.textContent = 'MF';
-    df1.textContent = 'DF';
-    df2.textContent = 'DF';
-    df4.textContent = 'DF';
-    df5.textContent = 'DF';
+    fw2.textContent = 'LWG';
+    fw3.textContent = 'CF';
+    fw4.textContent = 'RWG';
+    mf7.textContent = 'CMF';
+    mf8.textContent = 'CMF';
+    mf9.textContent = 'CMF';
+    df1.textContent = 'LSB';
+    df2.textContent = 'CB';
+    df4.textContent = 'CB';
+    df5.textContent = 'RSB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -242,6 +234,32 @@ formation.addEventListener('change', (e) => {
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'LWG：' + fw2.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'CF：' + fw3.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'RWG：' + fw4.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'CMF：' + mf7.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'CMF：' + mf8.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'CMF：' + mf9.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'LSB：' + df1.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df2.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df4.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'RSB：' + df5.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -262,16 +280,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'FW';
-    mf3.textContent = 'MF';
-    mf6.textContent = 'MF';
-    mf10.textContent = 'MF';
-    mf12.textContent = 'MF';
-    mf14.textContent = 'MF';
-    df1.textContent = 'DF';
-    df2.textContent = 'DF';
-    df4.textContent = 'DF';
-    df5.textContent = 'DF';
+    fw3.textContent = 'CF';
+    mf3.textContent = 'OMF';
+    mf6.textContent = 'LSH';
+    mf10.textContent = 'RSH';
+    mf12.textContent = 'DMF';
+    mf14.textContent = 'DMF';
+    df1.textContent = 'LSB';
+    df2.textContent = 'CB';
+    df4.textContent = 'CB';
+    df5.textContent = 'RSB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -313,6 +331,32 @@ formation.addEventListener('change', (e) => {
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw3.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'OMF：' + mf3.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'LSH：' + mf6.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'RSH：' + mf10.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'DMF：' + mf12.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'DMF：' + mf14.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'LSB：' + df1.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df2.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df4.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'RSB：' + df5.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -333,16 +377,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'FW';
-    fw4.textContent = 'FW';
-    mf3.textContent = 'MF';
-    mf6.textContent = 'MF';
-    mf10.textContent = 'MF';
-    mf12.textContent = 'MF';
-    mf14.textContent = 'MF';
-    df2.textContent = 'DF';
-    df3.textContent = 'DF';
-    df4.textContent = 'DF';
+    fw2.textContent = 'CF';
+    fw4.textContent = 'CF';
+    mf3.textContent = 'OMF';
+    mf6.textContent = 'LSH';
+    mf10.textContent = 'ESH';
+    mf12.textContent = 'DMF';
+    mf14.textContent = 'DMF';
+    df2.textContent = 'CB';
+    df3.textContent = 'CB';
+    df4.textContent = 'CB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -384,6 +428,32 @@ formation.addEventListener('change', (e) => {
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw2.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'CF：' + fw4.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'OMF：' + mf3.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'LSH：' + mf6.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'RSH：' + mf10.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'DMF：' + mf12.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'DMF：' + mf14.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df2.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df3.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'CB：' + df4.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -404,16 +474,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'FW';
-    fw3.textContent = 'FW';
-    fw4.textContent = 'FW';
-    mf6.textContent = 'MF';
-    mf7.textContent = 'MF';
-    mf9.textContent = 'MF';
-    mf10.textContent = 'MF';
-    df2.textContent = 'DF';
-    df3.textContent = 'DF';
-    df4.textContent = 'DF';
+    fw2.textContent = 'LWG';
+    fw3.textContent = 'CF';
+    fw4.textContent = 'RWG';
+    mf6.textContent = 'LSH';
+    mf7.textContent = 'CMF';
+    mf9.textContent = 'CMF';
+    mf10.textContent = 'RSH';
+    df2.textContent = 'CB';
+    df3.textContent = 'CB';
+    df4.textContent = 'CB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -455,6 +525,32 @@ formation.addEventListener('change', (e) => {
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'LWG：' + fw2.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'CF：' + fw3.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'RWG：' + fw4.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'LSH：' + mf6.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'CMF：' + mf7.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'CMF：' + mf9.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'RSH：' + mf10.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df2.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df3.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'CB：' + df4.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -475,16 +571,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'FW';
-    mf2.textContent = 'MF';
-    mf4.textContent = 'MF';
-    mf6.textContent = 'MF';
-    mf10.textContent = 'MF';
-    mf12.textContent = 'MF';
-    mf14.textContent = 'MF';
-    df2.textContent = 'DF';
-    df3.textContent = 'DF';
-    df4.textContent = 'DF';
+    fw3.textContent = 'CF';
+    mf2.textContent = 'OMF';
+    mf4.textContent = 'OMF';
+    mf6.textContent = 'LSH';
+    mf10.textContent = 'RSH';
+    mf12.textContent = 'DMF';
+    mf14.textContent = 'DMF';
+    df2.textContent = 'CB';
+    df3.textContent = 'CB';
+    df4.textContent = 'CB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -526,6 +622,32 @@ formation.addEventListener('change', (e) => {
         df4.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw3.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'OMF：' + mf2.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'OMF：' + mf4.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'LSH：' + mf6.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'RSH：' + mf10.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'DMF：' + mf12.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'DMF：' + mf14.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df2.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df3.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'CB：' + df4.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -546,16 +668,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'FW';
-    mf3.textContent = 'MF';
-    mf7.textContent = 'MF';
-    mf9.textContent = 'MF';
-    mf13.textContent = 'MF';
-    df1.textContent = 'DF';
-    df2.textContent = 'DF';
-    df3.textContent = 'DF';
-    df4.textContent = 'DF';
-    df5.textContent = 'DF';
+    fw3.textContent = 'CF';
+    mf3.textContent = 'OMF';
+    mf7.textContent = 'CMF';
+    mf9.textContent = 'CMF';
+    mf13.textContent = 'DMF';
+    df1.textContent = 'LSB';
+    df2.textContent = 'CB';
+    df3.textContent = 'CB';
+    df4.textContent = 'CB';
+    df5.textContent = 'RSB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -597,6 +719,32 @@ formation.addEventListener('change', (e) => {
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw3.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'OMF：' + mf3.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'CMF：' + mf7.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'CMF：' + mf9.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'DMF：' + mf13.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'LSB：' + df1.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'CB：' + df2.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df3.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df4.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'RSB：' + df5.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -617,16 +765,16 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'FW';
-    fw4.textContent = 'FW';
-    mf7.textContent = 'MF';
-    mf8.textContent = 'MF';
-    mf9.textContent = 'MF';
-    df1.textContent = 'DF';
-    df2.textContent = 'DF';
-    df3.textContent = 'DF';
-    df4.textContent = 'DF';
-    df5.textContent = 'DF';
+    fw2.textContent = 'CF';
+    fw4.textContent = 'CF';
+    mf7.textContent = 'CMF';
+    mf8.textContent = 'CMF';
+    mf9.textContent = 'CMF';
+    df1.textContent = 'LSB';
+    df2.textContent = 'CB';
+    df3.textContent = 'CB';
+    df4.textContent = 'CB';
+    df5.textContent = 'RSB';
     gk.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
@@ -668,6 +816,32 @@ formation.addEventListener('change', (e) => {
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP1.textContent = 'CF：' + fw2.textContent;
+          close.before(modalP1);
+          modalP2.textContent = 'CF：' + fw4.textContent;
+          close.before(modalP2);
+          modalP3.textContent = 'CMF：' + mf7.textContent;
+          close.before(modalP3);
+          modalP4.textContent = 'CMF：' + mf8.textContent;
+          close.before(modalP4);
+          modalP5.textContent = 'CMF：' + mf9.textContent;
+          close.before(modalP5);
+          modalP6.textContent = 'LSB：' + df1.textContent;
+          close.before(modalP6);
+          modalP7.textContent = 'CB：' + df2.textContent;
+          close.before(modalP7);
+          modalP8.textContent = 'CB：' + df3.textContent;
+          close.before(modalP8);
+          modalP9.textContent = 'CB：' + df4.textContent;
+          close.before(modalP9);
+          modalP10.textContent = 'RSB：' + df5.textContent;
+          close.before(modalP10);
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
