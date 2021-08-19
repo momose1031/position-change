@@ -68,6 +68,7 @@ let formation = document.getElementById('formation');
 let tds = document.querySelectorAll('td');
 let gk = document.getElementById('gk');
 const retryBtn = document.getElementById('retry-btn');
+const endBtn = document.getElementById('end-btn');
 
 formation.addEventListener('change', (e) => {
   if (e.target.value === 'position1') {
@@ -125,6 +126,51 @@ formation.addEventListener('change', (e) => {
         df5.textContent = player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
+        endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = 'FW：' + fw2.textContent;
+          const modalP2 = document.createElement('p');
+          modalP2.textContent = 'FW：' + fw4.textContent;
+          close.before(modalP2);
+          const modalP3 = document.createElement('p');
+          modalP3.textContent = 'MF：' + mf3.textContent;
+          close.before(modalP3);
+          const modalP4 = document.createElement('p');
+          modalP4.textContent = 'MF：' + mf7.textContent;
+          close.before(modalP4);
+          const modalP5 = document.createElement('p');
+          modalP5.textContent = 'MF：' + mf9.textContent;
+          close.before(modalP5);
+          const modalP6 = document.createElement('p');
+          modalP6.textContent = 'MF：' + mf13.textContent;
+          close.before(modalP6);
+          const modalP7 = document.createElement('p');
+          modalP7.textContent = 'DF：' + df1.textContent;
+          close.before(modalP7);
+          const modalP8 = document.createElement('p');
+          modalP8.textContent = 'DF：' + df2.textContent;
+          close.before(modalP8);
+          const modalP9 = document.createElement('p');
+          modalP9.textContent = 'DF：' + df4.textContent;
+          close.before(modalP9);
+          const modalP10 = document.createElement('p');
+          modalP10.textContent = 'DF：' + df5.textContent;
+          close.before(modalP10);
+          close.addEventListener('click', () => {
+            modalP.textContent = '';
+            modalP2.textContent = '';
+            modalP3.textContent = '';
+            modalP4.textContent = '';
+            modalP5.textContent = '';
+            modalP6.textContent = '';
+            modalP7.textContent = '';
+            modalP8.textContent = '';
+            modalP9.textContent = '';
+            modalP10.textContent = '';
+          });
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
