@@ -94,7 +94,6 @@ const modalP9 = document.createElement('p');
 const modalP10 = document.createElement('p');
 
 formation.addEventListener('change', (e) => {
-  // console.log(e.target.value.includes('position1'));
   if (e.target.value === 'position1') {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
