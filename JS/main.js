@@ -32,14 +32,26 @@ const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
 let players = [];
 
+function bytes(str) {
+	str = str.replace(/[｡-ﾟ]/g, 'K');
+	let hex = '';
+	for (let i = 0; i < str.length; i++) {
+		hex += (('0000' + str.charCodeAt(i).toString(16)).slice(-4)).replace(/^00/, '');
+	}
+	return hex.length/2;
+}
+
 function playerInput () {
-  if (player.value) { //プレイヤーが登録された場合
+  if (bytes(player.value) > 8) {
+    window.alert('全角4文字以内で入力してください')
+  }
+  if (bytes(player.value) <= 8) { //プレイヤーが登録された場合
     players.push(player.value);
     const li = document.createElement('li');
     li.textContent = player.value;
     const deleteBtn = document.createElement('div');
     deleteBtn.classList.add('delete-btn');
-    deleteBtn.textContent = '削除';
+    deleteBtn.textContent = '(削除する)';
     playerLists.appendChild(li);
     playerLists.appendChild(deleteBtn);
     player.value = ''; //inputの中身を空にする
@@ -381,7 +393,7 @@ formation.addEventListener('change', (e) => {
     fw4.textContent = 'CF';
     mf3.textContent = 'OMF';
     mf6.textContent = 'LSH';
-    mf10.textContent = 'ESH';
+    mf10.textContent = 'RSH';
     mf12.textContent = 'DMF';
     mf14.textContent = 'DMF';
     df2.textContent = 'CB';

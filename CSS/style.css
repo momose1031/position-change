@@ -16,6 +16,7 @@ body {
   width: 500px;
   height: 700px;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 table {
@@ -44,10 +45,28 @@ td {
 #formation {
   font-size: 30px;
   border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+#select-btn {
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#player {
+  font-size: 20px;
+  border-radius: 20px;
 }
 
 .delete-btn {
   cursor: pointer;
+  margin-bottom: 3px;
+  color: red;
+  font-size: 10px;
+  width: 50px;
 }
 
 #change-btn, #select-btn, #start-btn, #retry-btn, #end-btn, #close {
