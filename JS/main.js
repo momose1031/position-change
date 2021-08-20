@@ -32,7 +32,7 @@ const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
 let players = [];
 
-function bytes(str) {
+function bytes(str) { //全角1文字、半角2文字としてカウント
 	str = str.replace(/[｡-ﾟ]/g, 'K');
 	let hex = '';
 	for (let i = 0; i < str.length; i++) {
@@ -41,11 +41,11 @@ function bytes(str) {
 	return hex.length/2;
 }
 
-function playerInput () {
+function playerInput () { //プレイヤーの登録
   if (bytes(player.value) > 8) {
-    window.alert('全角4文字以内で入力してください')
+    alert('全角4文字以内で入力してください')
   }
-  if (bytes(player.value) <= 8) { //プレイヤーが登録された場合
+  if (bytes(player.value) <= 8 && player.value) { //プレイヤーが登録された場合
     players.push(player.value);
     const li = document.createElement('li');
     li.textContent = player.value;

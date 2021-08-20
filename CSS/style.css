@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ccc;
+  font-family: 'Yu Mincho Light', 'YuMincho', 'Yu Mincho', '游明朝体', sans-serif;
 }
 
 .main {
@@ -48,8 +49,8 @@ td {
   margin-bottom: 30px;
 }
 
-#select-btn {
-  background-color: green;
+#select-btn, #change-btn {
+  background-color:orange;
   color: #fff;
   text-align: center;
   border-radius: 5px;
@@ -71,6 +72,30 @@ td {
 
 #change-btn, #select-btn, #start-btn, #retry-btn, #end-btn, #close {
   cursor: pointer;
+  user-select: none;
+}
+
+#select-btn:hover, #change-btn:hover, #start-btn:hover, #retry-btn:hover, #end-btn:hover {
+  opacity: 0.8;
+}
+
+.buttons {
+  display: flex;
+}
+
+#retry-btn {
+  background-color: orange;
+  color: #fff;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#end-btn {
+  background-color: orangered;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .hidden {
