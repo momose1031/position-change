@@ -94,6 +94,7 @@ const modalP9 = document.createElement('p');
 const modalP10 = document.createElement('p');
 
 formation.addEventListener('change', (e) => {
+  // console.log(e.target.value.includes('position1'));
   if (e.target.value === 'position1') {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
@@ -120,13 +121,16 @@ formation.addEventListener('change', (e) => {
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
-        if (e.target.value !== 'position1') {
+        if (e.target.value !== 'position1') { //ポジション変更した時被ったポジションが表示されないバグ解消
           return;
         }
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -224,6 +228,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -321,6 +328,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw3.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -418,6 +428,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -515,6 +528,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -612,6 +628,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw3.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -709,6 +728,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw3.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -806,6 +828,9 @@ formation.addEventListener('change', (e) => {
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
+        if (players.length === 0) {
+          return;
+        }
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
