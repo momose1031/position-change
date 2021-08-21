@@ -81,6 +81,7 @@ let tds = document.querySelectorAll('td');
 let gk = document.getElementById('gk');
 const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
+const reloadBtn = document.getElementById('reload-btn');
 
 const modalP1 = document.createElement('p');
 const modalP2 = document.createElement('p');
@@ -177,6 +178,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -277,6 +279,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -377,6 +380,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -477,6 +481,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -577,6 +582,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -677,6 +683,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -777,6 +784,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
@@ -877,6 +885,7 @@ formation.addEventListener('change', (e) => {
           close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
           close.before(modalP10);
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
