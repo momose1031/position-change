@@ -1,6 +1,6 @@
 # ポジションチェンジ（サッカー）
 
-[ポジションチェンジ（サッカー）](https://thawing-lake-15472.herokuapp.com/)
+サイトURLは[こちら](https://thawing-lake-15472.herokuapp.com/)
 
 ![Videotogif](https://user-images.githubusercontent.com/69105145/130265539-002722cb-5ad3-41f6-b770-38a98d3e998b.gif)
 
