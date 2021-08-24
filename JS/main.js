@@ -110,6 +110,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -211,6 +212,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -312,6 +314,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -413,6 +416,7 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'CB';
     df4.textContent = 'CB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -514,6 +518,7 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'CB';
     df4.textContent = 'CB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -615,6 +620,7 @@ formation.addEventListener('change', (e) => {
     df3.textContent = 'CB';
     df4.textContent = 'CB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -716,6 +722,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -817,6 +824,7 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       formation.classList.add('hidden');
@@ -908,6 +916,7 @@ formation.addEventListener('change', (e) => {
       td.textContent = '';
     });
     gk.classList.add('hidden');
+    selectBtn.classList.add('hidden');
   }
 });
 
