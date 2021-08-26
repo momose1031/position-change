@@ -46,6 +46,7 @@ function playerInput () { //プレイヤーの登録
     alert('全角4文字以内で入力してください')
   }
   if (bytes(player.value) <= 8 && player.value) { //プレイヤーが登録された場合
+    player.focus();
     players.push(player.value);
     const li = document.createElement('li');
     li.textContent = player.value;
@@ -64,6 +65,7 @@ function playerInput () { //プレイヤーの登録
       }
       if(players.length < 10) {
         player.classList.remove('hidden');
+        player.focus();
         btn.classList.remove('hidden');
         changeBtn.classList.add('hidden');
       }
@@ -94,6 +96,8 @@ const modalP8 = document.createElement('p');
 const modalP9 = document.createElement('p');
 const modalP10 = document.createElement('p');
 
+let player = document.getElementById('player');
+
 formation.addEventListener('change', (e) => {
   if (e.target.value === 'position1') {
     [].forEach.call(tds, (td) => {
@@ -113,12 +117,12 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
+      player.focus();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -220,7 +224,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -322,7 +325,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -424,7 +426,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -526,7 +527,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -628,7 +628,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -730,7 +729,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -832,7 +830,6 @@ formation.addEventListener('change', (e) => {
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       btn.addEventListener('click', () => {
-        let player = document.getElementById('player');
         playerInput();
       });
       changeBtn.addEventListener('click', () => {
@@ -938,6 +935,7 @@ startBtn.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal.classList.add('hidden');
   mask.classList.add('hidden');
+  player.focus();
 });
 
 mask.addEventListener('click', () => {

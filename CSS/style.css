@@ -47,6 +47,7 @@ td {
   font-size: 30px;
   border-radius: 20px;
   margin-bottom: 30px;
+  border: none;
 }
 
 #select-btn, #change-btn {
@@ -60,6 +61,7 @@ td {
 #player {
   font-size: 20px;
   border-radius: 20px;
+  border: none;
 }
 
 .delete-btn {
