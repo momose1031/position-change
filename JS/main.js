@@ -117,7 +117,6 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      player.focus();
       formation.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
