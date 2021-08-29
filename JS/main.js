@@ -117,7 +117,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -218,7 +218,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -319,7 +319,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -420,7 +420,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -521,7 +521,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -622,7 +622,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -723,7 +723,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -824,7 +824,7 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      formation.classList.add('hidden');
+      formation.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
