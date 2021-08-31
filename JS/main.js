@@ -26,8 +26,6 @@ const df3 = document.getElementById('df3');
 const df4 = document.getElementById('df4');
 const df5 = document.getElementById('df5');
 
-const btn = document.getElementById('btn');
-
 const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
 let players = [];
