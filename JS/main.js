@@ -97,6 +97,7 @@ const modalP9 = document.createElement('p');
 const modalP10 = document.createElement('p');
 
 let player = document.getElementById('player');
+const playerForm = document.getElementById('player-form');
 
 formation.addEventListener('change', (e) => {
   if (e.target.value === 'position1') {
@@ -121,8 +122,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position1') { //ポジション変更した時被ったポジションが表示されないバグ解消
@@ -222,8 +224,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position2') {
@@ -323,8 +326,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position3') {
@@ -424,8 +428,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position4') {
@@ -525,8 +530,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position5') {
@@ -626,8 +632,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position6') {
@@ -727,8 +734,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position7') {
@@ -828,8 +836,9 @@ formation.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (e) => {
         playerInput();
+        e.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'position8') {

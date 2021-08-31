@@ -64,8 +64,10 @@
         <option value="position8">5-3-2</option>
       </select><br>
       <div id="select-btn" class="hidden">フォーメーションを決定</div><br>
-      <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
-      <button id="btn" class="hidden">登録</button>
+      <form id="player-form">
+        <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
+        <input type="submit" value="登録" id="btn" class="hidden">
+      </form>
       <ol id="player-lists"></ol>
       <div id="change-btn" class="hidden">ポジションをシャッフル</div>
       <div class="buttons">
