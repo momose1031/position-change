@@ -1,30 +1,14 @@
-const fw1 = document.getElementById('fw1');
-const fw2 = document.getElementById('fw2');
-const fw3 = document.getElementById('fw3');
-const fw4 = document.getElementById('fw4');
-const fw5 = document.getElementById('fw5');
+for (let i = 1; i < 6; i++) {
+  eval('const fw' + 'i' + '= document.getElementById(`fw${i}`);');
+  eval('const df' + 'i' + '= document.getElementById(`df${i}`);');
+}
+// eval関数を使わない方法を考える
 
-const mf1 = document.getElementById('mf1');
-const mf2 = document.getElementById('mf2');
-const mf3 = document.getElementById('mf3');
-const mf4 = document.getElementById('mf4');
-const mf5 = document.getElementById('mf5');
-const mf6 = document.getElementById('mf6');
-const mf7 = document.getElementById('mf7');
-const mf8 = document.getElementById('mf8');
-const mf9 = document.getElementById('mf9');
-const mf10 = document.getElementById('mf10');
-const mf11 = document.getElementById('mf11');
-const mf12 = document.getElementById('mf12');
-const mf13 = document.getElementById('mf13');
-const mf14 = document.getElementById('mf14');
-const mf15 = document.getElementById('mf15');
+for (let i = 1; i < 16; i++) {
+  eval('const mf' + 'i' + '= document.getElementById(`mf${i}`);');
+}
 
-const df1 = document.getElementById('df1');
-const df2 = document.getElementById('df2');
-const df3 = document.getElementById('df3');
-const df4 = document.getElementById('df4');
-const df5 = document.getElementById('df5');
+const btn = document.getElementById('btn');
 
 const playerLists = document.getElementById('player-lists');
 const changeBtn = document.getElementById('change-btn');
@@ -83,6 +67,9 @@ const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
 const reloadBtn = document.getElementById('reload-btn');
 
+// for (let i = 1; i < 11; i++) {
+//   eval('const modalP' + 'i' + '= document.createElement("p");');
+// }
 const modalP1 = document.createElement('p');
 const modalP2 = document.createElement('p');
 const modalP3 = document.createElement('p');
