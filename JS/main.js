@@ -1,11 +1,14 @@
+let fw = {};
+let df = {};
+let mf = {};
+
 for (let i = 1; i < 6; i++) {
-  eval('const fw' + 'i' + '= document.getElementById(`fw${i}`);');
-  eval('const df' + 'i' + '= document.getElementById(`df${i}`);');
+  fw[i] = document.getElementById(`fw${i}`);
+  df[i] = document.getElementById(`df${i}`);
 }
-// eval関数を使わない方法を考える
 
 for (let i = 1; i < 16; i++) {
-  eval('const mf' + 'i' + '= document.getElementById(`mf${i}`);');
+  mf[i] = document.getElementById(`mf${i}`);
 }
 
 const btn = document.getElementById('btn');
@@ -68,7 +71,7 @@ const endBtn = document.getElementById('end-btn');
 const reloadBtn = document.getElementById('reload-btn');
 
 // for (let i = 1; i < 11; i++) {
-//   eval('const modalP' + 'i' + '= document.createElement("p");');
+//   eval ("const modalP" + 'i' + '= document.createElement("p");');
 // }
 const modalP1 = document.createElement('p');
 const modalP2 = document.createElement('p');
