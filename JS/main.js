@@ -118,16 +118,11 @@ formation.addEventListener('change', (e) => {
       td.textContent = ''; // 各ボジションの表示を無くす
     });
     // 各ポジションを表示
-    fw2.textContent = 'CF';
-    fw4.textContent = 'CF';
-    mf3.textContent = 'OMF';
-    mf7.textContent = 'LSH';
-    mf9.textContent = 'RSH';
-    mf13.textContent = 'DMF';
-    df1.textContent = 'LSB';
-    df2.textContent = 'CB';
-    df4.textContent = 'CB';
-    df5.textContent = 'RSB';
+    let position1 = [fw2, fw4, mf3, mf7, mf9, mf13, df1, df2, df4, df5];
+    let position1_formation = ['CF', 'CF', 'OMF', 'LSH', 'RSH', 'DMF', 'LSB', 'CB', 'CB', 'RSB'];
+    for (let i = 0; i < position1.length; i++) {
+      position1[i].textContent = position1_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden'); // フォーメーションを決定ボタン表示
     selectBtn.addEventListener('click', () => {
@@ -155,26 +150,9 @@ formation.addEventListener('change', (e) => {
           return;
         }
         // ランダムにプレイヤーを表示
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw2.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw4.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf3.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf7.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf9.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf13.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df1.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df5.textContent = player10;
+        for (let i = 0; i < position1.length; i++) {
+          position1[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -182,30 +160,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw2.textContent;
-          modalP2.textContent = 'CF：' + fw4.textContent;
-          modalP3.textContent = '0MF：' + mf3.textContent;
-          modalP4.textContent = 'LSH：' + mf7.textContent;
-          modalP5.textContent = 'RSH：' + mf9.textContent;
-          modalP6.textContent = 'DMF：' + mf13.textContent;
-          modalP7.textContent = 'LSB：' + df1.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df4.textContent;
-          modalP10.textContent = 'RSB：' + df5.textContent;
+          for (let i = 0; i < position1.length; i++) {
+            modalP[i + 1].textContent = position1_formation[i] + '：' + position1[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf13.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position1.length; i++) {
+            players.push(position1[i].textContent);
+          }
+          for (let i = 0; i < position1.length; i++) {
+            position1[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -214,16 +180,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'LWG';
-    fw3.textContent = 'CF';
-    fw4.textContent = 'RWG';
-    mf7.textContent = 'CMF';
-    mf8.textContent = 'CMF';
-    mf9.textContent = 'CMF';
-    df1.textContent = 'LSB';
-    df2.textContent = 'CB';
-    df4.textContent = 'CB';
-    df5.textContent = 'RSB';
+    let position2 = [fw2, fw3, fw4, mf7, mf8, mf9, df1, df2, df4, df5];
+    let position2_formation = ['LWG', 'CF', 'RWG', 'CMF', 'CMF', 'CMF', 'LSB', 'CB', 'CB', 'RSB'];
+    for (let i = 0; i < position2.length; i++) {
+      position2[i].textContent = position2_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -247,26 +208,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw2.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw3.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw4.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf7.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf8.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf9.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df1.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df5.textContent = player10;
+        for (let i = 0; i < position2.length; i++) {
+          position2[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -274,30 +218,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'LWG：' + fw2.textContent;
-          modalP2.textContent = 'CF：' + fw3.textContent;
-          modalP3.textContent = 'RWG：' + fw4.textContent;
-          modalP4.textContent = 'CMF：' + mf7.textContent;
-          modalP5.textContent = 'CMF：' + mf8.textContent;
-          modalP6.textContent = 'CMF：' + mf9.textContent;
-          modalP7.textContent = 'LSB：' + df1.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df4.textContent;
-          modalP10.textContent = 'RSB：' + df5.textContent;
+          for (let i = 0; i < position2.length; i++) {
+            modalP[i + 1].textContent = position2_formation[i] + '：' + position2[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf8.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position2.length; i++) {
+            players.push(position2[i].textContent);
+          }
+          for (let i = 0; i < position2.length; i++) {
+            position2[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -306,16 +238,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'CF';
-    mf3.textContent = 'OMF';
-    mf6.textContent = 'LSH';
-    mf10.textContent = 'RSH';
-    mf12.textContent = 'DMF';
-    mf14.textContent = 'DMF';
-    df1.textContent = 'LSB';
-    df2.textContent = 'CB';
-    df4.textContent = 'CB';
-    df5.textContent = 'RSB';
+    let position3 = [fw3, mf3, mf6, mf10, mf12, mf14, df1, df2, df4, df5];
+    let position3_formation = ['CF', 'OMF', 'LSH', 'RSH', 'DMF', 'DMF', 'LSB', 'CB', 'CB', 'RSB'];
+    for (let i = 0; i < position3.length; i++) {
+      position3[i].textContent = position3_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -339,26 +266,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw3.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf3.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf6.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf10.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf12.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf14.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df1.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df5.textContent = player10;
+        for (let i = 0; i < position3.length; i++) {
+          position3[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -366,30 +276,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw3.textContent;
-          modalP2.textContent = 'OMF：' + mf3.textContent;
-          modalP3.textContent = 'LSH：' + mf6.textContent;
-          modalP4.textContent = 'RSH：' + mf10.textContent;
-          modalP5.textContent = 'DMF：' + mf12.textContent;
-          modalP6.textContent = 'DMF：' + mf14.textContent;
-          modalP7.textContent = 'LSB：' + df1.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df4.textContent;
-          modalP10.textContent = 'RSB：' + df5.textContent;
+          for (let i = 0; i < position3.length; i++) {
+            modalP[i + 1].textContent = position3_formation[i] + '：' + position3[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position3.length; i++) {
+            players.push(position3[i].textContent);
+          }
+          for (let i = 0; i < position3.length; i++) {
+            position3[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -398,16 +296,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'CF';
-    fw4.textContent = 'CF';
-    mf3.textContent = 'OMF';
-    mf6.textContent = 'LSH';
-    mf10.textContent = 'RSH';
-    mf12.textContent = 'DMF';
-    mf14.textContent = 'DMF';
-    df2.textContent = 'CB';
-    df3.textContent = 'CB';
-    df4.textContent = 'CB';
+    let position4 = [fw2, fw4, mf3, mf6, mf10, mf12, mf14, df2, df3, df4];
+    let position4_formation = ['CF', 'CF', 'OMF', 'LSH', 'RSH', 'DMF', 'DMF', 'CB', 'CB', 'CB'];
+    for (let i = 0; i < position4.length; i++) {
+      position4[i].textContent = position4_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -431,26 +324,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw2.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw4.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf3.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf6.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf10.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf12.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf14.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df3.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player10;
+        for (let i = 0; i < position4.length; i++) {
+          position4[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -458,30 +334,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw2.textContent;
-          modalP2.textContent = 'CF：' + fw4.textContent;
-          modalP3.textContent = 'OMF：' + mf3.textContent;
-          modalP4.textContent = 'LSH：' + mf6.textContent;
-          modalP5.textContent = 'RSH：' + mf10.textContent;
-          modalP6.textContent = 'DMF：' + mf12.textContent;
-          modalP7.textContent = 'DMF：' + mf14.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df3.textContent;
-          modalP10.textContent = 'CB：' + df4.textContent;
+          for (let i = 0; i < position4.length; i++) {
+            modalP[i + 1].textContent = position4_formation[i] + '：' + position4[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position4.length; i++) {
+            players.push(position4[i].textContent);
+          }
+          for (let i = 0; i < position4.length; i++) {
+            position4[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -490,16 +354,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'LWG';
-    fw3.textContent = 'CF';
-    fw4.textContent = 'RWG';
-    mf6.textContent = 'LSH';
-    mf7.textContent = 'CMF';
-    mf9.textContent = 'CMF';
-    mf10.textContent = 'RSH';
-    df2.textContent = 'CB';
-    df3.textContent = 'CB';
-    df4.textContent = 'CB';
+    let position5 = [fw2, fw3, fw4, mf6, mf7, mf9, mf10, df2, df3, df4];
+    let position5_formation = ['LWG', 'CF', 'RWG', 'LSH', 'CMF', 'CMF', 'RSH', 'CB', 'CB', 'CB'];
+    for (let i = 0; i < position5.length; i++) {
+      position5[i].textContent = position5_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -523,26 +382,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw2.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw3.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw4.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf6.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf7.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf9.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf10.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df3.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player10;
+        for (let i = 0; i < position5.length; i++) {
+          position5[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -550,30 +392,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'LWG：' + fw2.textContent;
-          modalP2.textContent = 'CF：' + fw3.textContent;
-          modalP3.textContent = 'RWG：' + fw4.textContent;
-          modalP4.textContent = 'LSH：' + mf6.textContent;
-          modalP5.textContent = 'CMF：' + mf7.textContent;
-          modalP6.textContent = 'CMF：' + mf9.textContent;
-          modalP7.textContent = 'RSH：' + mf10.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df3.textContent;
-          modalP10.textContent = 'CB：' + df4.textContent;
+          for (let i = 0; i < position5.length; i++) {
+            modalP[i + 1].textContent = position5_formation[i] + '：' + position5[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position5.length; i++) {
+            players.push(position5[i].textContent);
+          }
+          for (let i = 0; i < position5.length; i++) {
+            position5[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -582,16 +412,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'CF';
-    mf2.textContent = 'OMF';
-    mf4.textContent = 'OMF';
-    mf6.textContent = 'LSH';
-    mf10.textContent = 'RSH';
-    mf12.textContent = 'DMF';
-    mf14.textContent = 'DMF';
-    df2.textContent = 'CB';
-    df3.textContent = 'CB';
-    df4.textContent = 'CB';
+    let position6 = [fw3, mf2, mf4, mf6, mf10, mf12, mf14, df2, df3, df4];
+    let position6_formation = ['CF', 'OMF', 'OMF', 'LSH', 'RSH', 'DMF', 'DMF', 'CB', 'CB', 'CB'];
+    for (let i = 0; i < position6.length; i++) {
+      position6[i].textContent = position6_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -615,26 +440,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw3.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf2.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf4.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf6.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf10.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf12.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf14.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df3.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player10;
+        for (let i = 0; i < position6.length; i++) {
+          position6[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -642,30 +450,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw3.textContent;
-          modalP2.textContent = 'OMF：' + mf2.textContent;
-          modalP3.textContent = 'OMF：' + mf4.textContent;
-          modalP4.textContent = 'LSH：' + mf6.textContent;
-          modalP5.textContent = 'RSH：' + mf10.textContent;
-          modalP6.textContent = 'DMF：' + mf12.textContent;
-          modalP7.textContent = 'DMF：' + mf14.textContent;
-          modalP8.textContent = 'CB：' + df2.textContent;
-          modalP9.textContent = 'CB：' + df3.textContent;
-          modalP10.textContent = 'CB：' + df4.textContent;
+          for (let i = 0; i < position6.length; i++) {
+            modalP[i + 1].textContent = position6_formation[i] + '：' + position6[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf6.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf10.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf12.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf14.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position6.length; i++) {
+            players.push(position6[i].textContent);
+          }
+          for (let i = 0; i < position6.length; i++) {
+            position6[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -674,16 +470,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw3.textContent = 'CF';
-    mf3.textContent = 'OMF';
-    mf7.textContent = 'CMF';
-    mf9.textContent = 'CMF';
-    mf13.textContent = 'DMF';
-    df1.textContent = 'LSB';
-    df2.textContent = 'CB';
-    df3.textContent = 'CB';
-    df4.textContent = 'CB';
-    df5.textContent = 'RSB';
+    let position7 = [fw3, mf3, mf7, mf9, mf13, df1, df2, df3, df4, df5];
+    let position7_formation = ['CF', 'OMF', 'CMF', 'CMF', 'DMF', 'LSB', 'CB', 'CB', 'CB', 'RSB'];
+    for (let i = 0; i < position7.length; i++) {
+      position7[i].textContent = position7_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -707,26 +498,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw3.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf3.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf7.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf9.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf13.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df1.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df3.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df5.textContent = player10;
+        for (let i = 0; i < position7.length; i++) {
+          position7[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -734,30 +508,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw3.textContent;
-          modalP2.textContent = 'OMF：' + mf3.textContent;
-          modalP3.textContent = 'CMF：' + mf7.textContent;
-          modalP4.textContent = 'CMF：' + mf9.textContent;
-          modalP5.textContent = 'DMF：' + mf13.textContent;
-          modalP6.textContent = 'LSB：' + df1.textContent;
-          modalP7.textContent = 'CB：' + df2.textContent;
-          modalP8.textContent = 'CB：' + df3.textContent;
-          modalP9.textContent = 'CB：' + df4.textContent;
-          modalP10.textContent = 'RSB：' + df5.textContent;
+          for (let i = 0; i < position7.length; i++) {
+            modalP[i + 1].textContent = position7_formation[i] + '：' + position7[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf13.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position7.length; i++) {
+            players.push(position7[i].textContent);
+          }
+          for (let i = 0; i < position7.length; i++) {
+            position7[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
@@ -766,16 +528,11 @@ formation.addEventListener('change', (e) => {
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
-    fw2.textContent = 'CF';
-    fw4.textContent = 'CF';
-    mf7.textContent = 'CMF';
-    mf8.textContent = 'CMF';
-    mf9.textContent = 'CMF';
-    df1.textContent = 'LSB';
-    df2.textContent = 'CB';
-    df3.textContent = 'CB';
-    df4.textContent = 'CB';
-    df5.textContent = 'RSB';
+    let position8 = [fw2, fw4, mf7, mf8, mf9, df1, df2, df3, df4, df5];
+    let position8_formation = ['CF', 'CF', 'CMF', 'CMF', 'CMF', 'LSB', 'CB', 'CB', 'CB', 'RSB'];
+    for (let i = 0; i < position8.length; i++) {
+      position8[i].textContent = position8_formation[i];
+    }
     gk.classList.remove('hidden');
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
@@ -799,26 +556,9 @@ formation.addEventListener('change', (e) => {
         if (players.length === 0) {
           return;
         }
-        const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw2.textContent = player1;
-        const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        fw4.textContent = player2;
-        const player3 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf7.textContent = player3;
-        const player4 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf8.textContent = player4;
-        const player5 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        mf9.textContent = player5;
-        const player6 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df1.textContent = player6;
-        const player7 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df2.textContent = player7;
-        const player8 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df3.textContent = player8;
-        const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df4.textContent = player9;
-        const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        df5.textContent = player10;
+        for (let i = 0; i < position8.length; i++) {
+          position8[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+        }
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
@@ -826,30 +566,18 @@ formation.addEventListener('change', (e) => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
-          modalP1.textContent = 'CF：' + fw2.textContent;
-          modalP2.textContent = 'CF：' + fw4.textContent;
-          modalP3.textContent = 'CMF：' + mf7.textContent;
-          modalP4.textContent = 'CMF：' + mf8.textContent;
-          modalP5.textContent = 'CMF：' + mf9.textContent;
-          modalP6.textContent = 'LSB：' + df1.textContent;
-          modalP7.textContent = 'CB：' + df2.textContent;
-          modalP8.textContent = 'CB：' + df3.textContent;
-          modalP9.textContent = 'CB：' + df4.textContent;
-          modalP10.textContent = 'RSB：' + df5.textContent;
+          for (let i = 0; i < position8.length; i++) {
+            modalP[i + 1].textContent = position8_formation[i] + '：' + position8[i].textContent;
+          }
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
-          players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
-          fw2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          fw4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf7.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf8.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          mf9.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df1.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df2.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df3.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df4.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          df5.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          for (let i = 0; i < position8.length; i++) {
+            players.push(position8[i].textContent);
+          }
+          for (let i = 0; i < position8.length; i++) {
+            position8[i].textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          }
         });
       });
     });
