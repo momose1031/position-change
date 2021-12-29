@@ -1,3 +1,4 @@
+// getElementByIdで各ポジションを取得
 let fw = {};
 let df = {};
 let mf = {};
@@ -69,20 +70,17 @@ let gk = document.getElementById('gk');
 const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
 const reloadBtn = document.getElementById('reload-btn');
+const close = document.getElementById('close');
 
-// for (let i = 1; i < 11; i++) {
-//   eval ("const modalP" + 'i' + '= document.createElement("p");');
-// }
-const modalP1 = document.createElement('p');
-const modalP2 = document.createElement('p');
-const modalP3 = document.createElement('p');
-const modalP4 = document.createElement('p');
-const modalP5 = document.createElement('p');
-const modalP6 = document.createElement('p');
-const modalP7 = document.createElement('p');
-const modalP8 = document.createElement('p');
-const modalP9 = document.createElement('p');
-const modalP10 = document.createElement('p');
+let MODAL = {};
+let modalP = {};
+for (let i = 1; i < 11; i++) {
+  MODAL[i] = document.createElement('p');
+  close.before(MODAL[i]);
+  MODAL[i].id = `modalP${i}`;
+  modalP[i] = document.getElementById(`modalP${i}`)
+  console.log(modalP[i]);
+}
 
 let player = document.getElementById('player');
 const playerForm = document.getElementById('player-form');
@@ -151,27 +149,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw2.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'CF：' + fw4.textContent;
-          close.before(modalP2);
           modalP3.textContent = '0MF：' + mf3.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'LSH：' + mf7.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'RSH：' + mf9.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'DMF：' + mf13.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'LSB：' + df1.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df4.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -253,27 +241,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'LWG：' + fw2.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'CF：' + fw3.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'RWG：' + fw4.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'CMF：' + mf7.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'CMF：' + mf8.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'CMF：' + mf9.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'LSB：' + df1.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df4.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -355,27 +333,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw3.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'OMF：' + mf3.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'LSH：' + mf6.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'RSH：' + mf10.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'DMF：' + mf12.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'DMF：' + mf14.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'LSB：' + df1.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df4.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -457,27 +425,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw2.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'CF：' + fw4.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'OMF：' + mf3.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'LSH：' + mf6.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'RSH：' + mf10.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'DMF：' + mf12.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'DMF：' + mf14.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df3.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -559,27 +517,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'LWG：' + fw2.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'CF：' + fw3.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'RWG：' + fw4.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'LSH：' + mf6.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'CMF：' + mf7.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'CMF：' + mf9.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'RSH：' + mf10.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df3.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -661,27 +609,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw3.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'OMF：' + mf2.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'OMF：' + mf4.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'LSH：' + mf6.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'RSH：' + mf10.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'DMF：' + mf12.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'DMF：' + mf14.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df2.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df3.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'CB：' + df4.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -763,27 +701,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw3.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'OMF：' + mf3.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'CMF：' + mf7.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'CMF：' + mf9.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'DMF：' + mf13.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'LSB：' + df1.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'CB：' + df2.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df3.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df4.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -865,27 +793,17 @@ formation.addEventListener('change', (e) => {
         endBtn.addEventListener('click', () => {
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
-          modalP.textContent = '今日のスタメンはこれだ！！';
+          modalP0.textContent = '今日のスタメンはこれだ！！';
           modalP1.textContent = 'CF：' + fw2.textContent;
-          close.before(modalP1);
           modalP2.textContent = 'CF：' + fw4.textContent;
-          close.before(modalP2);
           modalP3.textContent = 'CMF：' + mf7.textContent;
-          close.before(modalP3);
           modalP4.textContent = 'CMF：' + mf8.textContent;
-          close.before(modalP4);
           modalP5.textContent = 'CMF：' + mf9.textContent;
-          close.before(modalP5);
           modalP6.textContent = 'LSB：' + df1.textContent;
-          close.before(modalP6);
           modalP7.textContent = 'CB：' + df2.textContent;
-          close.before(modalP7);
           modalP8.textContent = 'CB：' + df3.textContent;
-          close.before(modalP8);
           modalP9.textContent = 'CB：' + df4.textContent;
-          close.before(modalP9);
           modalP10.textContent = 'RSB：' + df5.textContent;
-          close.before(modalP10);
           reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
@@ -918,9 +836,8 @@ const selectBtn = document.getElementById('select-btn');
 const topPage = document.getElementById('top-page');
 const startBtn = document.getElementById('start-btn');
 const modal = document.getElementById('modal');
-const modalP = document.getElementById('modal-p');
+const modalP0 = document.getElementById('modal-p');
 const mask = document.getElementById('mask');
-const close = document.getElementById('close');
 
 startBtn.addEventListener('click', () => {
   topPage.classList.add('hidden');
@@ -941,5 +858,5 @@ mask.addEventListener('click', () => {
 function modal2 () {
   modal.classList.remove('hidden');
   mask.classList.remove('hidden');
-  modalP.textContent = 'フィールドプレーヤーを10人登録して、ポジションシャッフルしよう！！';
+  modalP0.textContent = 'フィールドプレーヤーを10人登録して、ポジションシャッフルしよう！！';
 }
