@@ -156,7 +156,7 @@ formation.addEventListener('change', (e) => {
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
-        endBtn.addEventListener('click', () => {
+        endBtn.addEventListener('click', () => { // スタメン決定ボタン（モーダル）
           modal.classList.remove('hidden');
           mask.classList.remove('hidden');
           modalP0.textContent = '今日のスタメンはこれだ！！';
@@ -165,7 +165,7 @@ formation.addEventListener('change', (e) => {
           }
           reloadBtn.classList.remove('hidden');
         });
-        retryBtn.addEventListener('click', () => {
+        retryBtn.addEventListener('click', () => { // 再シャッフル
           for (let i = 0; i < position1.length; i++) {
             players.push(position1[i].textContent);
           }
@@ -176,7 +176,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position2') {
+  else if (e.target.value === 'position2') { // 4-3-3を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -234,7 +234,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position3') {
+  else if (e.target.value === 'position3') { // 4-5-1を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -292,7 +292,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position4') {
+  else if (e.target.value === 'position4') { // 3-5-2を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -350,7 +350,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position5') {
+  else if (e.target.value === 'position5') { // 3-4-3を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -408,7 +408,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position6') {
+  else if (e.target.value === 'position6') { // 3-6-1を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -466,7 +466,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position7') {
+  else if (e.target.value === 'position7') { // 5-4-1を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -524,7 +524,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position8') {
+  else if (e.target.value === 'position8') { // 5-3-2を選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
@@ -582,7 +582,7 @@ formation.addEventListener('change', (e) => {
       });
     });
   }
-  else if (e.target.value === 'position0') {
+  else if (e.target.value === 'position0') { // フォーメーションを選択
     [].forEach.call(tds, (td) => {
       td.textContent = '';
     });
