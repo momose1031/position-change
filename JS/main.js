@@ -1,37 +1,65 @@
-// getElementByIdで各ポジションを取得
-let fw = {};
-let df = {};
-let mf = {};
+// 各ボタンを取得
+const startBtn = document.getElementById('start-btn'); //はじめる
+const selectBtn = document.getElementById('select-btn'); //フォーメーション決定
+const btn = document.getElementById('btn'); //プレイヤー入力
+const changeBtn = document.getElementById('change-btn'); //シャッフル
+const retryBtn = document.getElementById('retry-btn'); //再シャッフル
+const endBtn = document.getElementById('end-btn'); //スタメン決定
+const reloadBtn = document.getElementById('reload-btn'); //最初に戻る
 
-for (let i = 1; i < 6; i++) {
-  fw[i] = document.getElementById(`fw${i}`);
-  df[i] = document.getElementById(`df${i}`);
+// トップページ→説明モーダル（まずは、フォーメーションを決めよう！）
+const topPage = document.getElementById('top-page');
+const modal = document.getElementById('modal');
+const mask = document.getElementById('mask'); // 背景をグレーにする
+const close = document.getElementById('close'); // 閉じるボタン
+startBtn.addEventListener('click', () => { // はじめるを押すとトップページを閉じる
+  topPage.classList.add('hidden'); // トップページを閉じる
+  modal.classList.remove('hidden'); // 中心に説明モーダルを表示
+  mask.classList.remove('hidden'); // 中心以外をグレー背景にする
+});
+close.addEventListener('click', () => { // 閉じるボタン
+  modal.classList.add('hidden'); // モーダルを閉じる
+  mask.classList.add('hidden'); // グレー背景を閉じる
+  player.focus(); // 入力部分にカーソルを合わせる
+});
+mask.addEventListener('click', () => { // グレー背景（モーダル以外）をクリックしてもモーダルが閉じる
+  close.click();
+});
+
+// フォーメーション決定後のモーダル
+const modalP0 = document.getElementById('modal-p');
+function modal2 () {
+  modal.classList.remove('hidden');
+  mask.classList.remove('hidden');
+  modalP0.textContent = 'フィールドプレーヤーを10人登録して、ポジションシャッフルしよう！！';
 }
 
-for (let i = 1; i < 16; i++) {
-  mf[i] = document.getElementById(`mf${i}`);
+// スタメンを決定後に各ポジションを表示するモーダルの準備（<p>タグを作成・取得）
+let MODAL = {};
+let modalP = {};
+for (let i = 1; i < 11; i++) {
+  MODAL[i] = document.createElement('p');
+  close.before(MODAL[i]);
+  MODAL[i].id = `modalP${i}`;
+  modalP[i] = document.getElementById(`modalP${i}`)
 }
 
-const btn = document.getElementById('btn');
-
+// プレイヤー登録
 const playerLists = document.getElementById('player-lists');
-const changeBtn = document.getElementById('change-btn');
 let players = [];
-
-function bytes(str) { //全角1文字、半角2文字としてカウント
+function bytes(str) { // 全角1文字、半角2文字としてカウント
 	str = str.replace(/[｡-ﾟ]/g, 'K');
 	let hex = '';
 	for (let i = 0; i < str.length; i++) {
-		hex += (('0000' + str.charCodeAt(i).toString(16)).slice(-4)).replace(/^00/, '');
+    hex += (('0000' + str.charCodeAt(i).toString(16)).slice(-4)).replace(/^00/, '');
 	}
 	return hex.length/2;
 }
-
-function playerInput () { //プレイヤーの登録
-  if (bytes(player.value) > 8) {
+function playerInput () { // プレイヤー入力
+  if (bytes(player.value) > 8) { // 全角4文字半角8文字以内に制限
     alert('全角4文字以内で入力してください')
   }
-  if (bytes(player.value) <= 8 && player.value) { //プレイヤーが登録された場合
+  if (bytes(player.value) <= 8 && player.value) { // プレイヤーが正常に入力された場合
     player.focus();
     players.push(player.value);
     const li = document.createElement('li');
@@ -41,22 +69,22 @@ function playerInput () { //プレイヤーの登録
     deleteBtn.textContent = '(削除する)';
     playerLists.appendChild(li);
     playerLists.appendChild(deleteBtn);
-    player.value = ''; //inputの中身を空にする
-    deleteBtn.addEventListener('click', () => {
+    player.value = ''; // inputの中身を空にする
+    deleteBtn.addEventListener('click', () => { // 登録済プレイヤーの削除
       li.remove();
       deleteBtn.remove();
       let index = players.indexOf(li.textContent);
       if (index > -1) {
         players.splice(index, 1);
       }
-      if(players.length < 10) {
+      if(players.length < 10) { // 登録済プレイヤーが9人以下になった場合
         player.classList.remove('hidden');
         player.focus();
         btn.classList.remove('hidden');
         changeBtn.classList.add('hidden');
       }
     });
-    if (players.length > 9) {
+    if (players.length > 9) { // 登録済プレイヤーが10人になった場合
       player.classList.add('hidden');
       btn.classList.add('hidden');
       changeBtn.classList.remove('hidden');
@@ -64,32 +92,32 @@ function playerInput () { //プレイヤーの登録
   }
 }
 
-let formation = document.getElementById('formation');
-let tds = document.querySelectorAll('td');
-let gk = document.getElementById('gk');
-const retryBtn = document.getElementById('retry-btn');
-const endBtn = document.getElementById('end-btn');
-const reloadBtn = document.getElementById('reload-btn');
-const close = document.getElementById('close');
-
-let MODAL = {};
-let modalP = {};
-for (let i = 1; i < 11; i++) {
-  MODAL[i] = document.createElement('p');
-  close.before(MODAL[i]);
-  MODAL[i].id = `modalP${i}`;
-  modalP[i] = document.getElementById(`modalP${i}`)
-  console.log(modalP[i]);
+// getElementByIdで各ポジションを取得
+let fw = {};
+let df = {};
+let mf = {};
+for (let i = 1; i < 6; i++) {
+  fw[i] = document.getElementById(`fw${i}`);
+  df[i] = document.getElementById(`df${i}`);
+}
+for (let i = 1; i < 16; i++) {
+  mf[i] = document.getElementById(`mf${i}`);
 }
 
-let player = document.getElementById('player');
-const playerForm = document.getElementById('player-form');
+// フォーメーションの要素を取得
+let formation = document.getElementById('formation'); // フォーメーション<select>タグ
+let tds = document.querySelectorAll('td'); // 各ポジションの全てを取得
+let gk = document.getElementById('gk');
+let player = document.getElementById('player'); // プレイヤー入力値
+const playerForm = document.getElementById('player-form'); // プレイヤー入力欄
 
+// フォーメーションの設定→プレイヤー登録→シャッフル→スタメン決定
 formation.addEventListener('change', (e) => {
-  if (e.target.value === 'position1') {
+  if (e.target.value === 'position1') { // 4-4-2を選択
     [].forEach.call(tds, (td) => {
-      td.textContent = '';
+      td.textContent = ''; // 各ボジションの表示を無くす
     });
+    // 各ポジションを表示
     fw2.textContent = 'CF';
     fw4.textContent = 'CF';
     mf3.textContent = 'OMF';
@@ -101,28 +129,32 @@ formation.addEventListener('change', (e) => {
     df4.textContent = 'CB';
     df5.textContent = 'RSB';
     gk.classList.remove('hidden');
-    selectBtn.classList.remove('hidden');
+    selectBtn.classList.remove('hidden'); // フォーメーションを決定ボタン表示
     selectBtn.addEventListener('click', () => {
-      modal2 ();
+      modal2 (); // モーダルの表示(プレイヤーを登録しよう)
+      // フォーメーションを編集できないようにする
       formation.disabled = true;
       selectBtn.classList.add('hidden');
+      // 入力フォームを表示
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
       playerForm.addEventListener('submit', (e) => {
         playerInput();
-        e.preventDefault();
+        e.preventDefault(); // 入力するとトップページに戻るバグ解消
       });
       changeBtn.addEventListener('click', () => {
-        if (e.target.value !== 'position1') { //ポジション変更した時被ったポジションが表示されないバグ解消
+        if (e.target.value !== 'position1') { //フォーメーションを変更した時被ったポジションが表示されないバグ解消
           return;
         }
+        // 全ての削除ボタンの表示を無くす
         const allDeleteBtn = document.getElementsByClassName('delete-btn');
         [].forEach.call(allDeleteBtn, (deleteBtn) => {
           deleteBtn.classList.add('hidden');
         });
-        if (players.length === 0) {
+        if (players.length === 0) { // フォーメーションを変更したときにプレイヤーが表示されないバグ解消
           return;
         }
+        // ランダムにプレイヤーを表示
         const player1 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         fw2.textContent = player1;
         const player2 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -830,33 +862,3 @@ formation.addEventListener('change', (e) => {
     selectBtn.classList.add('hidden');
   }
 });
-
-const selectBtn = document.getElementById('select-btn');
-
-const topPage = document.getElementById('top-page');
-const startBtn = document.getElementById('start-btn');
-const modal = document.getElementById('modal');
-const modalP0 = document.getElementById('modal-p');
-const mask = document.getElementById('mask');
-
-startBtn.addEventListener('click', () => {
-  topPage.classList.add('hidden');
-  modal.classList.remove('hidden');
-  mask.classList.remove('hidden');
-});
-
-close.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  mask.classList.add('hidden');
-  player.focus();
-});
-
-mask.addEventListener('click', () => {
-  close.click();
-});
-
-function modal2 () {
-  modal.classList.remove('hidden');
-  mask.classList.remove('hidden');
-  modalP0.textContent = 'フィールドプレーヤーを10人登録して、ポジションシャッフルしよう！！';
-}
